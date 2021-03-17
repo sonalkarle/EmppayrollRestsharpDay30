@@ -81,21 +81,7 @@ namespace Emppayrollrest
             Assert.AreEqual("Female", dataresponse.gender);
             Console.WriteLine(response.Content);
         }
-        /// <summary>
-        /// UC5:Delete the person details
-        /// </summary>
-        [Test]
-        public void GivenEmployeeID_OnDelete_shouldreturnsucessFulstatus()
-        {
-            RestRequest request = new RestRequest("/Emppayroll/14", Method.DELETE);
-          
-
-            IRestResponse response = client.Execute(request);
-            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            Console.WriteLine(response.Content);
-
-        }
-        
+       
        
         
     }
