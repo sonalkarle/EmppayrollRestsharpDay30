@@ -61,40 +61,7 @@ namespace Emppayrollrest
             Console.WriteLine(response.Content);
             
         }
-        /// <summary>
-        /// UC4:UC4: Edit the details of employee
-        /// </summary>
-        [Test]
-        public void GivenEmployee_OnUpdate_shouldreturn_Updateemployee()
-        {
-            RestRequest request = new RestRequest("/Emppayroll/12", Method.PUT);
-            JObject jObject = new JObject();
-            jObject.Add("name", "Sonal Karle");
-            jObject.Add("Gender", "Female");
-
-            request.AddParameter("application/json", jObject, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            Employee dataresponse = JsonConvert.DeserializeObject<Employee>(response.Content);
-            Assert.AreEqual("Sonal Karle", dataresponse.name);
-            Assert.AreEqual("Female", dataresponse.gender);
-            Console.WriteLine(response.Content);
-        }
-        /// <summary>
-        /// UC5:Delete the person details
-        /// </summary>
-        [Test]
-        public void GivenEmployeeID_OnDelete_shouldreturnsucessFulstatus()
-        {
-            RestRequest request = new RestRequest("/Emppayroll/14", Method.DELETE);
-          
-
-            IRestResponse response = client.Execute(request);
-            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            Console.WriteLine(response.Content);
-
-        }
+       
         
        
         
